@@ -2,6 +2,7 @@ version: '3'
 services:
   warproxy:
     image: ghcr.io/kingcc/warproxy:latest
+    container_name: warproxy
     restart: always
     environment:
       - WARP_PLUS=true
