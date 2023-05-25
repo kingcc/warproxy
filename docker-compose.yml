@@ -9,7 +9,7 @@ services:
       - TZ=Asia/Ho_Chi_Minh
       - ENDPOINT=162.159.192.12
       - DNS=1.1.1.1
-      - USERNAME=admin
-      - PASSWORD=password
+      # - USERNAME=admin
+      # - PASSWORD=pass
     ports:
       - 1080:1080
