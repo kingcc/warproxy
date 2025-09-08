@@ -13,5 +13,5 @@ fi
 
 # echo "*** executing => $command"
 exec s6-notifyoncheck -d -n 300 -w 10000 \
-    s6-setuidgid abc $command | \
+    s6-setuidgid abc $command 2>&1 | \
     grep -E -v --line-buffered "^DEBUG:"

@@ -63,7 +63,7 @@ ENV \
 VOLUME /config
 WORKDIR /config
 
-HEALTHCHECK --interval=5m --timeout=30s --retries=3 \
+HEALTHCHECK --interval=25s --timeout=5s --retries=1 \
     CMD /usr/local/bin/healthcheck
 
 ENTRYPOINT ["/init"]
