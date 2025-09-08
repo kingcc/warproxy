@@ -56,22 +56,3 @@ jobs:
             ${{ env.IMAGE_NAME }}:latest
           platforms: linux/amd64
           push: true
-      - name: Cache slim
-        id: cache-slim
-        uses: actions/cache@v2
-        with:
-          path: ./dist_linux/
-          key: $runner.OS -slim-cache-$hashFiles('docker-slim') }}
-          restore-keys: |
-            $runner.OS -slim-cache-$hashFiles('docker-slim')
-            $runner.OS -slim-cache-
-      - name: Download SlimToolkit
-        if: steps.cache-slim.outputs.cache-hit != 'true'
-        run: |
-          wget https://downloads.dockerslim.com/releases/1.37.3/dist_linux.tar.gz
-          tar zxvf dist_linux.tar.gz
-          chmod +x ./dist_linux/docker-slim
-      - name: Minify
-        run: |
-          ./dist_linux/docker-slim build --tag ${{ env.IMAGE_NAME }}:slim --dockerfile Dockerfile . && \
-          docker push ${{ env.IMAGE_NAME }}:slim
