@@ -43,7 +43,7 @@ services:
 | ```HTTP_PORT```  | to run http proxy in a different port  | None |
 | ```ENDPOINT```  | endpoint of cloudflare | ```engage.cloudflareclient.com``` |
 | ```DNS```  | remote dns options  | ```1.1.1.1``` |
-| ```WARP_PLUS```  | set ```true``` to enable auto WARP+ quota script  | ```true``` |
+| ```WARP_PLUS```  | set ```true``` to enable auto WARP+ quota script  | ```false``` |
 | ```VERBOSE```  | show verbose level logs   | ```false```  |
 
 ### To change license key
